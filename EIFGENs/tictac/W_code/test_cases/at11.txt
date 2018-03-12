@@ -1,0 +1,9 @@
+
+new_game("a","b")
+play("a",5)
+new_game("a","#")
+new_game("a","a")
+undo
+undo
+undo
+

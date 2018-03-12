@@ -1,0 +1,80 @@
+undo
+redo
+undo
+play_again
+undo
+redo
+undo
+redo
+play_again
+new_game("A", "B")
+undo
+undo
+redo
+redo
+play_again
+undo
+redo
+undo
+undo
+redo
+redo
+play_again
+new_game("B", "C")
+redo
+undo
+play("D", 2)
+undo
+redo
+redo
+undo
+undo
+play("B", 5)
+play("B", 7)
+play("B", 1)
+undo
+undo
+undo
+undo
+redo
+redo
+redo
+redo
+undo
+undo
+play("C", 5)
+redo
+redo
+undo
+undo
+redo
+play("C", 1)
+play("B", 1)
+redo
+play("B", 5)
+play("C", 5)
+play("C", 9)
+play("B", 2)
+play("C", 3)
+play("B", 8)
+undo
+undo
+redo
+redo
+redo
+undo
+play_again
+undo
+redo
+redo
+undo
+play_again
+new_game("5", "A")
+new_game("Nisha", "N")
+undo
+redo
+redo
+redo
+redo
+undo
+undo

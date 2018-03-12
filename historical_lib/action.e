@@ -16,6 +16,8 @@ feature
 
 	clear_history:BOOLEAN
 		deferred end
+	remember: BOOLEAN
+		deferred end
 	apply
 		deferred end
 	undo

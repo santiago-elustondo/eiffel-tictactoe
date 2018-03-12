@@ -1,0 +1,16 @@
+new_game("","")
+undo
+new_game("luca","")
+undo
+new_game("luca","zeni")
+undo
+undo
+undo
+redo
+redo
+play("luca",2)
+play("zeni",2)
+undo
+undo
+redo 
+redo

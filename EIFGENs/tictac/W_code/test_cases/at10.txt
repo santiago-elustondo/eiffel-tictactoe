@@ -1,0 +1,72 @@
+new_game("3","3")
+undo
+undo
+redo
+redo
+redo
+redo
+redo
+undo
+undo
+play_again
+undo
+undo
+redo
+redo
+play_again
+undo
+undo
+redo
+redo
+new_game(";", "3")
+undo
+redo
+undo
+undo
+new_game("&", "&")
+undo
+redo
+redo
+undo
+new_game("Josh", "5")
+undo
+redo
+redo
+redo
+undo
+undo
+undo
+undo
+new_game("Ashkan", "Jackie")
+new_game("","")
+new_game("a","2")
+undo
+undo
+redo
+redo
+redo
+play("Ashkan", 1)
+undo
+undo
+redo
+redo
+redo
+redo
+new_game("GG", "DD")
+redo
+redo
+undo
+undo
+undo
+redo
+redo
+new_game("GG", "DD")
+new_game("Gt", "DD")
+new_game("Gf", "DD")
+new_game("%","D")
+new_game("G", ";")
+undo
+undo
+undo
+undo
+undo

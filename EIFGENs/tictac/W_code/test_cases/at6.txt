@@ -1,0 +1,34 @@
+play_again
+redo
+undo
+undo
+redo
+play("*", 1)
+play("DD", 1)
+new_game("","")
+play("Mahmoud", 2)
+undo
+undo
+undo
+play_again
+play_again
+undo
+undo
+undo
+redo
+redo
+redo
+play_again
+new_game("2G", "2/")
+new_game("Hovo", "Ostroff")
+undo
+redo
+undo
+undo
+play("Hovo", 1)
+play("Ostroff", 1)
+play_again
+undo
+redo
+undo
+play("Hovo", 1)

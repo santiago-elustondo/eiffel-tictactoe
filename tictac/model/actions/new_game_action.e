@@ -31,6 +31,7 @@ feature { ANY } -- constructors (actions are instantiated by clients)
 feature { HISTORICAL } -- commands
 
 	clear_history: BOOLEAN = true
+	remember: BOOLEAN = false
 
 	apply
 		do

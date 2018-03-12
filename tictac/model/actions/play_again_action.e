@@ -22,11 +22,19 @@ feature { ANY } -- constructors (actions are instantiated by clients)
 
 feature { HISTORICAL } -- commands
 
-	clear_history: BOOLEAN = true
+	clear_history: BOOLEAN
+		do
+			Result := target.no_error
+		end
+
+	remember: BOOLEAN
+		do
+			Result := not target.no_error
+		end
 
 	apply
 		do
-			target.new_round
+			target.new_round(true)
 		end
 
 	undo

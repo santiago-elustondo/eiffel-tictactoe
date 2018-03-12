@@ -1,0 +1,40 @@
+new_game("Pete","Tim")
+new_game("%", "Game")
+new_game("Hello", "&")
+undo
+undo
+undo
+undo
+undo
+redo
+redo
+redo
+undo
+new_game("Hovo", "Mahmoud")
+undo
+undo
+redo
+redo
+redo
+redo
+play("Hovo", 1)
+new_game("Mahmoud", "Hovo")
+play("Mahmoud", 1)
+play("Hovo", 2)
+play("Mahmoud", 3)
+play("Hovo", 4)
+play("Mahmoud", 5)
+play("Hovo", 6)
+play("Mahmoud", 7)
+undo
+redo
+redo
+undo
+redo
+undo
+play_again
+undo
+play("Mahmoud", 7)
+undo
+redo
+play("Hovo", 3)

@@ -1,0 +1,8 @@
+function run_test {
+	set TEST_FILE="at${1}.txt"
+	./oracle.exe -b $TEST_FILE > at1.expected.txt
+	`pwd`/../tictac -b $TEST_FILE > at1.actual.txt
+	diff -y at1.actual.txt at1.expected.txt
+}
+
+run_test 1

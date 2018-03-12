@@ -30,6 +30,7 @@ feature { NONE } --user messages
 	msg_err_same_name: STRING = "names of players must be different"
 	msg_err_first_char: STRING = "name must start with A-Z or a-z"
 	msg_err_finished: STRING = "game is finished"
+	msg_err_not_finished: STRING = "finish this game first"
 	msg_inst_start: STRING = "start new game"
 	msg_inst_play_again: STRING = "play again or start new game"
 	msg_inst_plays_next(c:CHARACTER): STRING
@@ -61,7 +62,8 @@ feature { ACTION } --mutators (should be made available as ACTIONs)
 			o_name := ""
 			x_score := 0
 			o_score := 0
-			new_round
+			clear_board
+			new_round(false)
 			clear_err
 		end
 
@@ -76,7 +78,18 @@ feature { ACTION } --mutators (should be made available as ACTIONs)
 				o_name := a_o_name
 				x_score := 0
 				o_score := 0
-				new_round
+				new_round(false)
+			end
+		end
+
+	new_round(ensure_round_finished:BOOLEAN)
+		do
+			if ensure_round_finished and round_is_in_progress then
+				set_err(msg_err_not_finished)
+			else
+				clear_board
+				current_turn := who_starts
+				clear_err
 			end
 		end
 
@@ -127,11 +140,9 @@ feature { ACTION } --mutators (should be made available as ACTIONs)
 			end
 		end
 
-	new_round
+	clear_board
 		do
-			current_turn := X_CHAR
 			board := create {ARRAY[CHARACTER]}.make_filled (BLANK_CHAR, 1, 9)
-	    	clear_err
 		end
 
 	set_err (msg: STRING)
@@ -146,9 +157,33 @@ feature { ACTION } --mutators (should be made available as ACTIONs)
 
 feature { ACTION } --queries
 
+	get_err_msg: STRING
+		do
+			Result := err_msg
+		end
+
 	in_play: BOOLEAN
 		do
 			Result := round_is_in_progress
+		end
+
+	who_starts: CHARACTER
+		local
+			num_rounds_played: INTEGER
+			half_of_rounds_played: REAL_64
+			even_num_of_rounds_played: BOOLEAN
+		do
+			num_rounds_played
+				:= x_score + o_score
+			half_of_rounds_played
+				:= num_rounds_played / 2
+			even_num_of_rounds_played
+				:= half_of_rounds_played.floor * 2 = num_rounds_played
+			if even_num_of_rounds_played  then
+				Result := X_CHAR
+			else
+				Result := O_CHAR
+			end
 		end
 
 	is_winner (c: CHARACTER): BOOLEAN
@@ -175,6 +210,11 @@ feature { ACTION } --queries
 			Result := hor_1st_row or hor_2nd_row or hor_3rd_row or
 					  vert_1st_col or vert_2st_col or vert_3st_col or
 					  diag_ne_sw or diag_se_nw
+		end
+
+	no_error: BOOLEAN
+		do
+			Result := err_msg ~ msg_err_ok
 		end
 
 	winner_exists: BOOLEAN
@@ -249,11 +289,20 @@ feature { ACTION } --queries
 feature { ANY } -- output {ETF_MODEL}
 
 	out: STRING
+		local
+			double_space_before_arrow: BOOLEAN
 		do
+			double_space_before_arrow := next_instruction ~ msg_inst_start
 			create Result.make_empty
-			Result.append("  " + err_msg + ":  => " + next_instruction + "%N")
+			Result.append("  " + err_msg)
+			if double_space_before_arrow then
+				Result.append(":  => ")
+			else
+				Result.append(": => ")
+			end
+			Result.append(next_instruction + "%N")
 			Result.append(board_as_string)
 			Result.append("  " + x_score.out + ": score for %"" + x_name +"%" (as X)" + "%N")
-			Result.append("  " + o_score.out + ": score for %"" + o_name +"%" (as O)" + "%N")
+			Result.append("  " + o_score.out + ": score for %"" + o_name +"%" (as O)" + "")
 		end
 end

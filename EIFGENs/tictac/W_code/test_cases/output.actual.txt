@@ -1,0 +1,727 @@
+  ok:  => start new game
+  ___
+  ___
+  ___
+  0: score for "" (as X)
+  0: score for "" (as O)
+->new_game("a","b")
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("a",1)
+  ok: => b plays next
+  X__
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("b",9)
+  ok: => a plays next
+  X__
+  ___
+  __O
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("a",3)
+  ok: => b plays next
+  X_X
+  ___
+  __O
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("b",7)
+  ok: => a plays next
+  X_X
+  ___
+  O_O
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("a",8)
+  ok: => b plays next
+  X_X
+  ___
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("b",2)
+  ok: => a plays next
+  XOX
+  ___
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("c",4)
+  no such player: => a plays next
+  XOX
+  ___
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  XOX
+  ___
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => b plays next
+  X_X
+  ___
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("b",5)
+  ok: => a plays next
+  X_X
+  _O_
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("a",6)
+  ok: => b plays next
+  X_X
+  _OX
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  X_X
+  _O_
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => b plays next
+  X_X
+  _OX
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("a",5)
+  not this player's turn: => b plays next
+  X_X
+  _OX
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => b plays next
+  X_X
+  _OX
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("a",2)
+  not this player's turn: => b plays next
+  X_X
+  _OX
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => b plays next
+  X_X
+  _OX
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  X_X
+  _O_
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => b plays next
+  X_X
+  _OX
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  not this player's turn: => b plays next
+  X_X
+  _OX
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("b",4)
+  ok: => a plays next
+  X_X
+  OOX
+  OXO
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("a",2)
+  there is a winner: => play again or start new game
+  XXX
+  OOX
+  OXO
+  1: score for "a" (as X)
+  0: score for "b" (as O)
+->new_game("a","b")
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("c",5)
+  no such player: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  no such player: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  no such player: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  no such player: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("a",6)
+  ok: => b plays next
+  ___
+  __X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  no such player: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => b plays next
+  ___
+  __X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => b plays next
+  ___
+  __X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("b",4)
+  ok: => a plays next
+  ___
+  O_X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => b plays next
+  ___
+  __X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  no such player: => a plays next
+  ___
+  ___
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => b plays next
+  ___
+  __X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => a plays next
+  ___
+  O_X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play_again
+  finish this game first: => a plays next
+  ___
+  O_X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("a",6)
+  button already taken: => a plays next
+  ___
+  O_X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("b",2)
+  not this player's turn: => a plays next
+  ___
+  O_X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("c",7)
+  no such player: => a plays next
+  ___
+  O_X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  O_X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  O_X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  O_X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  button already taken: => a plays next
+  ___
+  O_X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  not this player's turn: => a plays next
+  ___
+  O_X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  no such player: => a plays next
+  ___
+  O_X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("a",8)
+  ok: => b plays next
+  ___
+  O_X
+  _X_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("b",1)
+  ok: => a plays next
+  O__
+  O_X
+  _X_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => b plays next
+  ___
+  O_X
+  _X_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  O_X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => b plays next
+  ___
+  O_X
+  _X_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => a plays next
+  O__
+  O_X
+  _X_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => a plays next
+  O__
+  O_X
+  _X_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => a plays next
+  O__
+  O_X
+  _X_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play_again
+  finish this game first: => a plays next
+  O__
+  O_X
+  _X_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  finish this game first: => a plays next
+  O__
+  O_X
+  _X_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => b plays next
+  ___
+  O_X
+  _X_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  O_X
+  ___
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => b plays next
+  ___
+  O_X
+  _X_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => a plays next
+  O__
+  O_X
+  _X_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  finish this game first: => a plays next
+  O__
+  O_X
+  _X_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("a",7)
+  ok: => b plays next
+  O__
+  O_X
+  XX_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("b",3)
+  ok: => a plays next
+  O_O
+  O_X
+  XX_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => b plays next
+  O__
+  O_X
+  XX_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  O__
+  O_X
+  _X_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->undo
+  ok: => a plays next
+  O__
+  O_X
+  _X_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  finish this game first: => a plays next
+  O__
+  O_X
+  _X_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => b plays next
+  O__
+  O_X
+  XX_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->redo
+  ok: => a plays next
+  O_O
+  O_X
+  XX_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("t",7)
+  no such player: => a plays next
+  O_O
+  O_X
+  XX_
+  0: score for "a" (as X)
+  0: score for "b" (as O)
+->play("a",9)
+  there is a winner: => play again or start new game
+  O_O
+  O_X
+  XXX
+  1: score for "a" (as X)
+  0: score for "b" (as O)
+->play_again
+  ok: => b plays next
+  ___
+  ___
+  ___
+  1: score for "a" (as X)
+  0: score for "b" (as O)
+->play("b",1)
+  ok: => a plays next
+  O__
+  ___
+  ___
+  1: score for "a" (as X)
+  0: score for "b" (as O)
+->play("a",9)
+  ok: => b plays next
+  O__
+  ___
+  __X
+  1: score for "a" (as X)
+  0: score for "b" (as O)
+->play("b",2)
+  ok: => a plays next
+  OO_
+  ___
+  __X
+  1: score for "a" (as X)
+  0: score for "b" (as O)
+->play("a",6)
+  ok: => b plays next
+  OO_
+  __X
+  __X
+  1: score for "a" (as X)
+  0: score for "b" (as O)
+->play("b",3)
+  there is a winner: => play again or start new game
+  OOO
+  __X
+  __X
+  1: score for "a" (as X)
+  1: score for "b" (as O)
+->play("a",3)
+  game is finished: => play again or start new game
+  OOO
+  __X
+  __X
+  1: score for "a" (as X)
+  1: score for "b" (as O)
+->undo
+  game is finished: => play again or start new game
+  OOO
+  __X
+  __X
+  1: score for "a" (as X)
+  1: score for "b" (as O)
+->undo
+  game is finished: => play again or start new game
+  OOO
+  __X
+  __X
+  1: score for "a" (as X)
+  1: score for "b" (as O)
+->redo
+  game is finished: => play again or start new game
+  OOO
+  __X
+  __X
+  1: score for "a" (as X)
+  1: score for "b" (as O)
+->redo
+  game is finished: => play again or start new game
+  OOO
+  __X
+  __X
+  1: score for "a" (as X)
+  1: score for "b" (as O)
+->play_again
+  ok: => a plays next
+  ___
+  ___
+  ___
+  1: score for "a" (as X)
+  1: score for "b" (as O)
+->play("a",8)
+  ok: => b plays next
+  ___
+  ___
+  _X_
+  1: score for "a" (as X)
+  1: score for "b" (as O)
+->undo
+  ok: => a plays next
+  ___
+  ___
+  ___
+  1: score for "a" (as X)
+  1: score for "b" (as O)
+->redo
+  ok: => b plays next
+  ___
+  ___
+  _X_
+  1: score for "a" (as X)
+  1: score for "b" (as O)

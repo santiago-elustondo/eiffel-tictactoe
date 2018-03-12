@@ -18,6 +18,10 @@ feature { NONE } -- props
 	player_name: STRING
 	position: INTEGER
 
+feature { NONE } -- state
+
+	action_failed: BOOLEAN
+
 feature { ANY } -- constructors (actions are instantiated by clients)
 
 	make(a_target: TICTACTOE; a_player_name: STRING; a_position: INTEGER)
@@ -34,15 +38,21 @@ feature { HISTORICAL } -- commands
 			Result := not target.round_is_in_progress
 		end
 
+	remember: BOOLEAN = true
+
 	apply
 		do
 			target.try_move(player_name, position)
+			action_failed := target.no_error
 		end
 
 	undo
 		do
-			target.clear_position(position)
-			target.switch_turn
+			if action_failed then
+				target.clear_position(position)
+				target.switch_turn
+			end
+			target.clear_err
 		end
 
 end

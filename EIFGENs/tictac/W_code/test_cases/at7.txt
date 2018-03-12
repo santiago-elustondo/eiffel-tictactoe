@@ -1,0 +1,13 @@
+new_game("Luca", "Vic")
+play("Luca", 1)
+play("%", 1)
+play("Vic", 1)
+play("%", 2)
+play("Vic", 2)
+new_game("&", "&")
+undo
+redo
+undo
+undo
+--redo
+
