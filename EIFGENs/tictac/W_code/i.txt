@@ -1,0 +1,11 @@
+play("e", 3)
+redo
+undo
+undo
+redo
+redo
+play("c", 2)
+undo
+play("r", 4)
+redo
+redo

@@ -1,0 +1,24 @@
+new_game("x", "x")
+new_game("1", "x")
+new_game("", "x")
+new_game("dude", "chick")
+play("dd", 3)
+play("chick", 3)
+play("dude", 2)
+play("chick", 2)
+play("chick", 4)
+undo
+play("chick", 5)
+play("chick", 6)
+play("dude", 1)
+undo
+redo
+redo
+play("chick", 6)
+play("dude", 3)
+play("chick", 3)
+undo
+redo
+play("dude", 3)
+play("d", 3)
+play_again
